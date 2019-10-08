@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var crossfoam_dev_utils_1 = require("crossfoam-dev-utils");
+var utils_1 = require("@crossfoam/utils");
 var get = function (key, defaultValue) {
     return browser.storage.local.get(key)
         .then(function (data) {
-        if (data && data !== null && data !== undefined && !crossfoam_dev_utils_1.objEmpty(data)) {
+        if (data && data !== null && data !== undefined && !utils_1.objEmpty(data)) {
             if (key in data) {
                 return data[key];
             }

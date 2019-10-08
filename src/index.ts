@@ -1,4 +1,4 @@
-import { objEmpty } from "crossfoam-dev-utils";
+import { objEmpty } from "@crossfoam/utils";
 
 const get = (key: string, defaultValue?: any): Promise<any> => {
 
