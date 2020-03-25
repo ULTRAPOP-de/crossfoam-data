@@ -5,7 +5,7 @@ const get = (key: string, defaultValue?: any): Promise<any> => {
   return browser.storage.local.get(key)
     .then( (data: object) => {
       if (data && data !== null && data !== undefined && !objEmpty(data)) {
-        if (key in data) {
+        if (typeof data === "object" && key in data) {
           return data[key];
         }
         return data;
@@ -21,7 +21,7 @@ const get = (key: string, defaultValue?: any): Promise<any> => {
 const set = (key: string, value: any): Promise<any> => {
   return browser.storage.local.set({[key]: value})
     .then(() => {
-      if (key in value) {
+      if (typeof value === "object" && key in value) {
         return value[key];
       }
       return value;
